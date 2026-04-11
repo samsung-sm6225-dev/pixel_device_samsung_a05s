@@ -1,0 +1,37 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+type vendor_hal_default, domain;
+type vendor_hal_default_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_hal_default)
+
+allow vendor_hal_default self:capability { chown dac_override sys_nice };
+allow vendor_hal_default system_file:file execute_no_trans;
+allow vendor_hal_default vendor_file:file execute_no_trans;
+allow vendor_hal_default device:dir { search };
+allow vendor_hal_default goodix_fp_device:chr_file rw_file_perms;
+allow vendor_hal_default vendor_data_file:dir { create_dir_perms };
+allow vendor_hal_default vendor_data_file:file { create_file_perms };
+
+# Allow vendor HALs to access various properties
+allow vendor_hal_default vendor_fingerprint_prop:property_service { set };
+allow vendor_hal_default vendor_power_prop:property_service { set };
+allow vendor_hal_default vendor_thermal_prop:property_service { set };
+allow vendor_hal_default vendor_audio_prop:property_service { set };
+allow vendor_hal_default vendor_camera_prop:property_service { set };
+allow vendor_hal_default vendor_display_prop:property_service { set };
+allow vendor_hal_default vendor_radio_prop:property_service { set };
+allow vendor_hal_default vendor_wifi_prop:property_service { set };
+allow vendor_hal_default vendor_bluetooth_prop:property_service { set };
+
+# Allow vendor HALs to talk to system services
+allow vendor_hal_default system_server:binder { call };
+allow vendor_hal_default mediaserver:binder { call };
+allow vendor_hal_default servicemanager:binder { call };
+allow vendor_hal_default surfaceflinger:binder { call };
+allow vendor_hal_default audioserver:binder { call };
+allow vendor_hal_default rild:binder { call };

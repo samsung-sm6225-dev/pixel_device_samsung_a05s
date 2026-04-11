@@ -1,0 +1,14 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow hal_display_default display_device:chr_file { read write open ioctl };
+allow hal_display_default system_server:binder { call };
+allow hal_display_default mediaserver:binder { call };
+allow hal_display_default servicemanager:binder { call };
+allow hal_display_default surfaceflinger:binder { call };
+allow hal_display_default audioserver:binder { call };
+allow hal_display_default rild:binder { call };
+allow hal_display_default vendor_display_prop:property_service { set };

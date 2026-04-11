@@ -1,0 +1,20 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+type vendor_wifi, domain;
+type vendor_wifi_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_wifi)
+
+allow vendor_wifi wifi_device:chr_file rw_file_perms;
+allow vendor_wifi system_file:file execute_no_trans;
+allow vendor_wifi vendor_file:file execute_no_trans;
+allow vendor_wifi hal_wifi_hwservice:hwservice_manager find;
+allow vendor_wifi hal_wifi_server:binder call;
+allow vendor_wifi hal_wifi_hwservice:hwservice_manager add;
+allow vendor_wifi wifi_prop:property_service set;
+allow vendor_wifi system_prop:property_service set;
+allow vendor_wifi vendor_wifi_prop:property_service set;

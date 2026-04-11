@@ -1,0 +1,21 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow hal_camera_default camera_prop:property_service { set };
+allow hal_camera_default system_prop:property_service { set };
+allow hal_camera_default vendor_camera_prop:property_service { set };
+
+
+
+allow hal_camera_default self:capability { sys_nice };
+allow hal_camera_default camera_device:chr_file { read write open ioctl };
+allow hal_camera_default vendor_camera_device:chr_file { read write open ioctl };
+allow hal_camera_default system_server:binder { call };
+allow hal_camera_default mediaserver:binder { call };
+allow hal_camera_default servicemanager:binder { call };
+allow hal_camera_default surfaceflinger:binder { call };
+allow hal_camera_default audioserver:binder { call };
+allow hal_camera_default rild:binder { call };

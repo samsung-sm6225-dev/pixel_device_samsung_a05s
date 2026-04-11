@@ -1,0 +1,30 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Allow vendor_init to create /data/vendor/fpdata
+allow vendor_init vendor_data_file:dir create_dir_perms;
+allow vendor_init vendor_data_file:file create_file_perms;
+
+# Allow vendor_hal to access various devices
+allow vendor_hal self:capability { chown dac_override };
+allow vendor_hal system_file:file execute_no_trans;
+allow vendor_hal vendor_file:file execute_no_trans;
+allow vendor_hal device:dir { search };
+allow vendor_hal goodix_fp_device:chr_file rw_file_perms;
+
+# Allow rild to access vendor properties
+allow rild vendor_radio_prop:property_service { set };
+
+# Allow cameraserver to access vendor camera properties
+allow cameraserver vendor_camera_prop:property_service { set };
+
+# Allow audioserver to access vendor audio properties
+allow audioserver vendor_audio_prop:property_service { set };
+
+# Allow surfaceflinger to access vendor display properties
+allow surfaceflinger vendor_display_prop:property_service { set };
+
+

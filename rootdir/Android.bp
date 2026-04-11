@@ -150,20 +150,8 @@ sh_binary {
 }
 
 sh_binary {
-    name: "init.qti.chg_policy.sh",
-    src: "bin/init.qti.chg_policy.sh",
-    vendor: true,
-}
-
-sh_binary {
     name: "init.qti.dcvs.sh",
     src: "bin/init.qti.dcvs.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qti.display_boot.sh",
-    src: "bin/init.qti.display_boot.sh",
     vendor: true,
 }
 
@@ -174,44 +162,14 @@ sh_binary {
 }
 
 sh_binary {
-    name: "init.qti.kernel.debug-bengal.sh",
-    src: "bin/init.qti.kernel.debug-bengal.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qti.kernel.debug.sh",
-    src: "bin/init.qti.kernel.debug.sh",
-    vendor: true,
-}
-
-sh_binary {
     name: "init.qti.kernel.sh",
     src: "bin/init.qti.kernel.sh",
     vendor: true,
 }
 
 sh_binary {
-    name: "init.qti.media.sh",
-    src: "bin/init.qti.media.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qti.qcv.sh",
-    src: "bin/init.qti.qcv.sh",
-    vendor: true,
-}
-
-sh_binary {
     name: "init.qti.write.sh",
     src: "bin/init.qti.write.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "install-recovery.sh",
-    src: "bin/install-recovery.sh",
     vendor: true,
 }
 
@@ -325,6 +283,20 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.recovery.qcom.rc",
+    src: "etc/init.recovery.qcom.rc",
+    sub_dir: "init",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.samsung.rc",
+    src: "etc/init.recovery.samsung.rc",
+    sub_dir: "init",
+    recovery: true,
+}
+
+prebuilt_etc {
     name: "init.samsung.bsp.rc",
     src: "etc/init.samsung.bsp.rc",
     sub_dir: "init/hw",
@@ -346,6 +318,13 @@ prebuilt_etc {
 }
 
 // fstab
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    vendor: true,
+    vendor_ramdisk_available: true,
+}
+
 prebuilt_etc {
     name: "fstab.ramplus",
     src: "etc/fstab.ramplus",

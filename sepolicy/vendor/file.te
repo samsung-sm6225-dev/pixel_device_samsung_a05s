@@ -1,0 +1,8 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+type vendor_goodix_fp_device, dev_type;
+type vendor_sysfs_vibrator, sysfs_type, fs_type;

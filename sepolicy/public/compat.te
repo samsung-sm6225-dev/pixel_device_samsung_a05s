@@ -1,0 +1,9 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# For compatibility with older vendor sepolicy
+allow { domain -init -recovery } vendor_file:file { execute_no_trans };
+allow { domain -init -recovery } vendor_file:dir { search };

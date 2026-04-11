@@ -1,0 +1,10 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow hal_power_default self:capability { sys_nice };
+allow hal_power_default power_device:chr_file { read write open ioctl };
+allow hal_power_default system_server:binder { call };
+allow hal_power_default vendor_power_prop:property_service { set };

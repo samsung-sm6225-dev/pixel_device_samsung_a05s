@@ -1,0 +1,49 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+android.hardware.audio@7.0::IDevice default
+android.hardware.audio.effect@7.0::IEffectsFactory default
+android.hardware.bluetooth@1.1::IBluetoothHci default
+android.hardware.bluetooth.audio@2.1::IBluetoothAudioProvidersFactory default
+android.hardware.camera.provider@2.7::ICameraProvider legacy/0
+android.hardware.drm@1.4::ICryptoFactory default
+android.hardware.drm@1.4::IDrmFactory default
+android.hardware.gnss@2.1::IGnss default
+android.hardware.graphics.allocator@4.0::IAllocator default
+android.hardware.graphics.composer@2.4::IComposer default
+android.hardware.graphics.mapper@4.0::IMapper default
+android.hardware.health@2.1::IHealth default
+android.hardware.keymaster@4.1::IKeymasterDevice default
+android.hardware.light@2.0::ILight default
+android.hardware.memtrack@1.0::IMemtrack default
+android.hardware.power@1.3::IPower default
+android.hardware.radio@1.6::IRadio slot1
+android.hardware.radio@1.6::ISap slot1
+android.hardware.radio.config@1.3::IRadioConfig default
+android.hardware.sensors@2.1::ISensors default
+android.hardware.soundtrigger@2.3::ISoundTriggerHw default
+android.hardware.thermal@2.0::IThermal default
+android.hardware.usb@1.3::IUsb default
+android.hardware.vibrator@1.2::IVibrator default
+android.hardware.wifi@1.6::IWifi default
+android.hardware.wifi.hostapd@1.2::IHostapd default
+android.hardware.wifi.supplicant@1.3::ISupplicant default
+vendor.qti.hardware.perf@2.2::IPerf default
+
+android.hardware.camera.provider@2.7::ICameraProvider u:object_r:hal_camera_hwservice:s0
+android.hardware.audio@7.0::IDeviceFactory u:object_r:hal_audio_hwservice:s0
+android.hardware.display.allocator@4.0::IAllocator u:object_r:hal_graphics_allocator_hwservice:s0
+android.hardware.display.composer@2.4::IComposer u:object_r:hal_graphics_composer_hwservice:s0
+android.hardware.power@1.3::IPower u:object_r:hal_power_hwservice:s0
+android.hardware.thermal@2.0::IThermal u:object_r:hal_thermal_hwservice:s0
+android.hardware.radio@1.6::IRadio u:object_r:hal_radio_hwservice:s0
+android.hardware.radio.config@1.3::IRadioConfig u:object_r:hal_radio_hwservice:s0
+android.hardware.wifi@1.6::IWifi u:object_r:hal_wifi_hwservice:s0
+android.hardware.wifi.hostapd@1.2::IHostapd u:object_r:hal_wifi_hwservice:s0
+android.hardware.wifi.supplicant@1.3::ISupplicant u:object_r:hal_wifi_hwservice:s0
+android.hardware.bluetooth@1.1::IBluetoothHci u:object_r:hal_bluetooth_hwservice:s0
+android.hardware.bluetooth.audio@2.1::IBluetoothAudioProvidersFactory u:object_r:hal_bluetooth_hwservice:s0
+vendor.qti.hardware.fingerprint@1.0::IFingerprint u:object_r:hal_fingerprint_hwservice:s0

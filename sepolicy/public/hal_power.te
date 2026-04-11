@@ -1,0 +1,20 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+type hal_power_default, domain;
+type hal_power_default_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(hal_power_default)
+
+allow hal_power_default power_device:chr_file rw_file_perms;
+allow hal_power_default system_file:file execute_no_trans;
+allow hal_power_default vendor_file:file execute_no_trans;
+allow hal_power_default hal_power_hwservice:hwservice_manager find;
+allow hal_power_default hal_power_server:binder call;
+allow hal_power_default hal_power_hwservice:hwservice_manager add;
+allow hal_power_default power_prop:property_service set;
+allow hal_power_default system_prop:property_service set;
+allow hal_power_default vendor_power_prop:property_service set;

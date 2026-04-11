@@ -1,0 +1,11 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow cameraserver hal_camera_hwservice:hwservice_manager find;
+allow cameraserver hal_camera_server:binder call;
+allow cameraserver vendor_camera_prop:property_service { get };
+allow cameraserver camera_device:chr_file { read write open ioctl };
+allow cameraserver vendor_camera_device:chr_file { read write open ioctl };
