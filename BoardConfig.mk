@@ -77,8 +77,8 @@ BOARD_KERNEL_CMDLINE := \
     printk.devkmsg=on \
     loop.max_part=7
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_MKBOOTIMG_ARGS := --dtb_offset $(BOARD_DTB_OFFSET)
+BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
@@ -89,12 +89,9 @@ BOARD_BOOT_HEADER_VERSION ?= 4
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
-TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
-TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/kernel
-
-PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
+TARGET_KERNEL_VERSION := 5.15
 
 # Kernel modules
 BOARD_SYSTEM_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/system_dlkm/*.ko)
@@ -127,13 +124,13 @@ BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_SUPER_PARTITION_SIZE := 9017753600
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 9017556992
 
 # Partitions
-include vendor/lineage/config/BoardConfigReservedSize.mk
 BOARD_EROFS_PCLUSTER_SIZE := 262144
 BOARD_EROFS_COMPRESSOR := lz4
 
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -198,14 +195,11 @@ BOARD_AVB_VENDOR_BOOT_ROLLBACK_INDEX := 1
 BOARD_AVB_VENDOR_BOOT_ROLLBACK_INDEX_LOCATION := 1
 
 # VINTF
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(DEVICE_PATH)/compatibility_matrix.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml \
-    hardware/lineage/interfaces/compatibility_matrices/compatibility_matrix.lineage.xml
-
-DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
+    vendor/aosp/config/device_framework_matrix.xml \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/compatibility_matrix.xml
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn

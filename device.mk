@@ -1,15 +1,3 @@
-# Add common definitions for Qualcomm
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
-
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-PRODUCT_PACKAGES += \
-    checkpoint_gc \
-    otapreopt_script
-
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -76,11 +64,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
-
-# Boot control (A/B Updates)
-PRODUCT_PACKAGES += \
-    com.android.hardware.boot \
-    android.hardware.boot-service.default_recovery
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
@@ -197,10 +180,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
 
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # Media
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -239,8 +218,7 @@ PRODUCT_PACKAGES += \
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    #$(LOCAL_PATH)/overlay-aosp
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 

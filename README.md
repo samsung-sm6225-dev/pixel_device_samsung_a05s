@@ -1,2 +1,2 @@
-# lineage_device_samsung_a05s
-a05s device tree for lineage (WIP)
+# pixel_device_samsung_a05s
+a05s device tree for PixelExperience (WIP)
