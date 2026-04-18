@@ -45,7 +45,4 @@ media.stagefright.audio.deep=false
 
 # Miscellaneous
 ro.af.client_heap_size_kbyte=7168
-ro.com.google.clientidbase=android-samsung-ss
-ro.com.google.clientidbase.tx=android-samsung-rvod1
-ro.opa.eligible_device=true
 
