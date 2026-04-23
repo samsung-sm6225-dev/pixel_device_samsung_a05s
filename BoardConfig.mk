@@ -167,11 +167,11 @@ TARGET_BOARD_PLATFORM := bengal
 OVERRIDE_QCOM_HARDWARE_VARIANT := sm6225
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
-TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/vendor.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/product.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/system_ext.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/configs/odm.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
