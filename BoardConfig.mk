@@ -167,11 +167,11 @@ TARGET_BOARD_PLATFORM := bengal
 OVERRIDE_QCOM_HARDWARE_VARIANT := sm6225
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/vendor.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/product.prop
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/system_ext.prop
-TARGET_ODM_PROP += $(DEVICE_PATH)/configs/odm.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/props/product.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/props/system_ext.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
@@ -210,11 +210,11 @@ BOARD_AVB_VENDOR_BOOT_ROLLBACK_INDEX := 1
 BOARD_AVB_VENDOR_BOOT_ROLLBACK_INDEX_LOCATION := 1
 
 # VINTF
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/manifest.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    vendor/aosp/config/device_framework_matrix.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/compatibility_matrix.xml
+    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml \
+    vendor/aosp/config/device_framework_matrix.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
