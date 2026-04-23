@@ -110,7 +110,6 @@ PRODUCT_PACKAGES += \
 
 # Display NDK
 PRODUCT_PACKAGES += \
-    android.hardware.light-V2-ndk.vendor \
     android.hardware.memtrack-V1-ndk.vendor \
     vendor.qti.hardware.display.config-V1-ndk.vendor \
     vendor.qti.hardware.display.config-V2-ndk.vendor \
