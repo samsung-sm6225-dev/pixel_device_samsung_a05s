@@ -981,12 +981,8 @@ vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Gatekeeper
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service
 vendor/bin/hw/vendor.qti.hardware.secureprocessor@1.0
-vendor/etc/init/android.hardware.gatekeeper@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.secureprocessor@1.0.rc
-vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
 vendor/lib64/hw/gatekeeper.mdfpp.so
 
 # GNSS
@@ -1609,34 +1605,10 @@ vendor/lib/hw/vibrator.default.so
 vendor/lib64/hw/vibrator.default.so
 
 # Wi-Fi
-system_ext/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
-system_ext/lib/vendor.qti.hardware.wigig.supptunnel@1.0.so
-system_ext/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
-system_ext/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
 vendor/bin/cnss-daemon
-vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
-vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
-vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
-vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
-vendor/lib/libwifi-hal-ctrl.so
-vendor/lib/libwifi-hal-qcom.so
-vendor/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
-vendor/lib64/libwifi-hal-ctrl.so
-vendor/lib64/libwifi-hal-qcom.so
-vendor/lib64/libwifi-hal.so
-vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
-vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
-vendor/lib64/vendor.samsung.hardware.wifi.hostapd-V1-ndk.so
-vendor/lib64/vendor.samsung.hardware.wifi.supplicant-V1-ndk.so
-
-# Wi-Fi configs
-vendor/etc/wifi/WCNSS_qcom_cfg.ini
-vendor/etc/wifi/icm.conf
+vendor/bin/pktlogconf
 vendor/etc/wifi/indoorchannel.info
 vendor/etc/wifi/p2p_supplicant_overlay.conf
-vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Wi-Fi firmware
@@ -1942,9 +1914,6 @@ vendor/etc/dax3_media_codecs_dolby_audio.xml
 vendor/etc/dpolicy
 vendor/etc/file112.wav
 vendor/etc/floating_feature.xml
-vendor/etc/fstab.default
-vendor/etc/fstab.emmc
-vendor/etc/fstab.ramplus
 vendor/etc/ftm_loopback
 vendor/etc/ftm_test_config
 vendor/etc/ftm_test_config_bengal-idp-snd-card
