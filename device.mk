@@ -71,10 +71,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
     libgui_vendor
 
-# ConfigStore
-PRODUCT_PACKAGES += \
-    disable_configstore
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4.vendor \
@@ -149,7 +145,8 @@ PRODUCT_PACKAGES += \
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -185,19 +182,27 @@ PRODUCT_PACKAGES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor
+    android.hardware.keymaster@4.1.vendor \
+    libkeymaster_messages.vendor \
+    libkeymaster4_1support.vendor \
+    libkeymaster_portable.vendor
 
 # Keymint
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml \
     android.hardware.security.keymint-V1-ndk.vendor \
     android.hardware.security.keymint-V2-ndk.vendor \
+    android.hardware.security.rkp-V3-ndk.vendor \
     android.hardware.security.secureclock-V1-ndk.vendor \
     android.hardware.security.sharedsecret-V1-ndk.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.hardware_keystore_v200.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hardware_keystore.xml \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.strongbox_keystore_v4.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.strongbox_keystore.xml
 
 # Media
 PRODUCT_PACKAGES += \
@@ -362,7 +367,8 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc 
 
 PRODUCT_PACKAGES += \
-    fstab.emmc \
+    fstab.qcom \
+    fstab.ramplus \
     init.a05s.rc \
     init.qcom.factory.rc \
     init.qcom.rc \
@@ -437,11 +443,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     WifiResCommonOverlay
-
-# WiFi firmware symlinks
-PRODUCT_PACKAGES += \
-    firmware_wlan_mac.bin_symlink \
-    firmware_WCNSS_qcom_cfg.ini_symlink
 
 # Wifi - Configs
 PRODUCT_COPY_FILES += \
