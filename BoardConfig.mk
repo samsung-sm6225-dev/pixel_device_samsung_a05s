@@ -191,7 +191,9 @@ VENDOR_SECURITY_PATCH := 2025-08-01
 BOOT_SECURITY_PATCH := $(VENDOR_SECURITY_PATCH)
 
 # SEPolicy
-#include device/qcom/sepolicy_vndr/SEPolicy.mk
+SELINUX_IGNORE_NEVERALLOWS := true
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
+include device/qcom/sepolicy_vndr/sm6225/SEPolicy.mk
 #BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 #PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 #PRODUCT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
